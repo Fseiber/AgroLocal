@@ -71,6 +71,13 @@
       "when": 1793528384147,
       "tag": "0009_phase3_release_version_guard",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1793544195223,
+      "tag": "0010_security_invitations_require_confirmed_email",
+      "breakpoints": true
     }
   ]
 }
