@@ -1,0 +1,76 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1793525863441,
+      "tag": "0000_migration",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793526643940,
+      "tag": "0001_bootstrap_platform_admin",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793526834640,
+      "tag": "0002_phase2_matching_opportunities",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1793528067978,
+      "tag": "0003_phase3_operation_schema",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1793528088292,
+      "tag": "0004_phase3_agreement_functions",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1793528144062,
+      "tag": "0005_phase3_stock_actions",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1793528159306,
+      "tag": "0006_phase3_document_actions",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1793528259537,
+      "tag": "0007_phase3_buyer_stock_authorization",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1793528328250,
+      "tag": "0008_phase3_finalize_alias_fix",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1793528384147,
+      "tag": "0009_phase3_release_version_guard",
+      "breakpoints": true
+    }
+  ]
+}
