@@ -41,7 +41,7 @@ function Page() {
     <div className="mx-auto grid max-w-5xl gap-8 px-4 py-10 md:grid-cols-[1fr_320px]">
       <div>
         <Link to="/mercado" search={{ tab: "demandas" }} className="text-sm text-muted-foreground hover:underline">← Volver al mercado</Link>
-        <p className="mt-4 text-sm font-semibold text-muted-foreground">{d.code} {d.is_demo && <Badge variant="outline">Demo</Badge>}</p>
+        <div className="mt-4 text-sm font-semibold text-muted-foreground">{d.code} {d.is_demo && <Badge variant="outline">Demo</Badge>}</div>
         <h1 className="text-3xl font-extrabold uppercase">Se busca {(PRODUCT_LABELS[d.product_type] ?? "").toLowerCase()} — {d.commercial_type}</h1>
         <dl className="mt-6 grid grid-cols-2 gap-4 rounded-2xl border bg-card p-5">
           <Item k="Cantidad buscada" v={formatKg(d.quantity_kg)} />

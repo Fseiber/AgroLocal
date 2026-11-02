@@ -43,6 +43,7 @@ function DemandForm({ m, userId }: { m: Membership; userId: string }) {
       const w = f.unit_weight ? Number(f.unit_weight) : null;
       const quantity_kg = toKg(Number(f.quantity), f.unit, w);
       const min_quantity_kg = f.min_quantity ? toKg(Number(f.min_quantity), f.unit, w) : null;
+      if (min_quantity_kg !== null && min_quantity_kg > quantity_kg) throw new Error("La cantidad mínima no puede superar la cantidad total");
       setLoading(true);
       const { data, error } = await supabase.from("demands").insert({
         company_id: m.company.id, created_by: userId, product_type: f.product as "cascara" | "elaborado",

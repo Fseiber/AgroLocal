@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
 import { canOperate, useAuthSession, useMe } from "@/hooks/use-session";
-import { formatKg } from "@/lib/domain";
+import { formatKg, toKg } from "@/lib/domain";
 import { errorMessage } from "@/lib/market";
 
 export function waLink(phone: string, text: string) {
@@ -46,7 +46,13 @@ export function QuoteButton(props: {
   if (!canOperate(m)) return <p className="rounded-xl bg-muted p-4 text-sm">Tu empresa debe estar verificada y necesitás permiso de operador para consultar.</p>;
 
   async function go() {
-    const kg = Math.round(Number(tons) * 1000);
+    let kg: number;
+    try {
+      kg = toKg(Number(tons), "t");
+    } catch (error) {
+      toast.error(errorMessage(error));
+      return;
+    }
     if (!kg || kg <= 0) { toast.error("Indicá cuántas toneladas querés consultar"); return; }
     if (kg > props.maxKg) { toast.error(`Máximo ${formatKg(props.maxKg)}`); return; }
     // Open the tab synchronously so popup blockers allow it, then navigate it.

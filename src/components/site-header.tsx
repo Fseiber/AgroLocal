@@ -1,4 +1,3 @@
-import logo from "@/assets/agrolocal-logo.jpeg.asset.json";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useQueryClient } from "@tanstack/react-query";
 import { Menu, X } from "lucide-react";
@@ -10,7 +9,7 @@ import { useAuthSession } from "@/hooks/use-session";
 export function Brand() {
   return (
     <Link to="/" className="flex items-center gap-2" aria-label="AgroLocal, inicio">
-      <img src={logo.url} alt="AgroLocal" className="h-11 w-11 rounded-full" />
+      <img src="/favicon.png" alt="AgroLocal" className="h-11 w-11 rounded-full" />
       <span className="font-display text-xl font-bold text-primary">AgroLocal</span>
     </Link>
   );

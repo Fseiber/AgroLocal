@@ -1,3 +1,5 @@
+import { roundQuantityProduct } from "./decimal-quantity";
+
 // Pure business rules for AgroLocal (no I/O). Covered by src/test/domain.test.ts.
 
 export const PROVINCES = [
@@ -36,17 +38,15 @@ export const unitNeedsWeight = (u: UnitCode) => u === "bolsa" || u === "big_bag"
 export function toKg(quantity: number, unit: UnitCode, weightPerUnitKg?: number | null): number {
   if (!Number.isFinite(quantity) || quantity <= 0) throw new Error("La cantidad debe ser mayor a cero");
   if (unitNeedsWeight(unit)) {
-    if (!weightPerUnitKg || weightPerUnitKg <= 0) {
+    if (!weightPerUnitKg || !Number.isFinite(weightPerUnitKg) || weightPerUnitKg <= 0) {
       throw new Error("Indicá el peso de cada bolsa o big bag para calcular el total");
     }
-    return round(quantity * weightPerUnitKg);
+    return roundQuantityProduct(quantity, weightPerUnitKg);
   }
   const u = UNITS.find((x) => x.code === unit);
   if (!u || u.factor == null) throw new Error("Unidad desconocida");
-  return round(quantity * u.factor);
+  return roundQuantityProduct(quantity, u.factor);
 }
-
-const round = (n: number) => Math.round(n * 1000) / 1000;
 
 export interface StockLike {
   quantity_kg: number;

@@ -75,6 +75,7 @@ export function ListingForm({ product, m, userId }: { product: "cascara" | "elab
         commercial_type: f.commercial_type, variety: f.variety.trim() || null, subgroup: product === "elaborado" ? f.subgroup : null,
         presentation: f.presentation, original_unit: f.unit, original_quantity: Number(f.quantity),
         unit_weight_kg: unitNeedsWeight(f.unit) ? Number(f.unit_weight) : null,
+        // Only a package-based original unit makes the entered quantity a package count.
         unit_count: unitNeedsWeight(f.unit) ? Number(f.quantity) : null,
         quantity_kg, min_sale_kg, partial_allowed: f.partial,
         price: f.price ? Number(f.price) : null, currency: f.currency, price_unit: f.price_unit,

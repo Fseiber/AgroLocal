@@ -49,7 +49,7 @@ function Page() {
     <div className="mx-auto grid max-w-5xl gap-8 px-4 py-10 md:grid-cols-[1fr_320px]">
       <div>
         <Link to="/mercado" className="text-sm text-muted-foreground hover:underline">← Volver al mercado</Link>
-        <p className="mt-4 text-sm font-semibold text-muted-foreground">{l.code} {l.is_demo && <Badge variant="outline">Demo</Badge>}</p>
+        <div className="mt-4 text-sm font-semibold text-muted-foreground">{l.code} {l.is_demo && <Badge variant="outline">Demo</Badge>}</div>
         <h1 className="text-3xl font-extrabold uppercase">{PRODUCT_LABELS[l.product_type]} — {l.commercial_type}</h1>
         {photos.length > 0 && (
           <div className="mt-4 flex gap-3 overflow-x-auto">{photos.map((u) => <img key={u} src={u} alt="Foto del producto" className="h-48 rounded-xl object-cover" />)}</div>

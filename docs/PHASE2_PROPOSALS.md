@@ -77,3 +77,7 @@ Los nombres SQL siguientes son propuestas a partir de `0010`; orden/numeración 
 ## Aceptación
 
 Revisar primero estas decisiones. Preparar migraciones y regresiones por tema; probar instalación limpia y actualización con datos representativos aislados; verificar permisos y preservar términos confirmados. Un build o una prueba de funciones puras no valida por sí solos estas propiedades de PostgreSQL.
+
+## Actualización: cantidades implementadas localmente como 0011
+
+La numeración anterior era una propuesta, no archivos existentes. 0010 ya fue utilizada por la corrección de invitaciones. La implementación local de cantidades y sus límites están en QUANTITY_CONSISTENCY.md; no se aplicó a ninguna base. La numeración del resto de propuestas se debe reconfirmar antes de crear sus migraciones.

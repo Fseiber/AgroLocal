@@ -116,7 +116,7 @@ Antes de desplegar hay que verificar URLs de retorno de Auth para desarrollo/pro
 
 No ejecutes migraciones remotas sin autorización. No uses `drizzle-kit push` ni generes diferencias suponiendo que `drizzle/schema.ts` describe la base. No modifiques `0000–0009`: los cambios futuros requieren migraciones compatibles, revisión y pruebas aisladas. La concesión automática de administrador de `0001` continúa pendiente en etapa 2; no cambies ese archivo ni asumas que se retiró remotamente.
 
-Lovable se conserva mediante `@lovable.dev/vite-tanstack-config`, `.lovable/` y `AGENTS.md`. No agregues duplicados de sus plugins, no cambies configuración remota ni reescribas historia publicada. Esta copia no contiene `.git`; no permite confirmar un remoto o sincronización activos.
+Lovable se conserva mediante `@lovable.dev/vite-tanstack-config`, `.lovable/` y `AGENTS.md`. No agregues duplicados de sus plugins, no cambies configuración remota ni reescribas historia publicada. Esta copia ya contiene Git; la sincronización activa con el editor requiere verificación independiente.
 
 ## Estado y preparación de GitHub
 
@@ -127,3 +127,11 @@ WhatsApp usa enlaces `wa.me`; no hay asistente integrado operativo. No se agrega
 La etapa 1 protege archivos y herramientas y documenta las correcciones pendientes. La etapa 2 requiere aprobación independiente. Consultá [el roadmap](docs/ROADMAP.md) y [las propuestas técnicas](docs/PHASE2_PROPOSALS.md).
 
 No se inicializó Git, no se crearon commits y no se subió nada. Antes de un primer commit, comprobá si existe un repositorio original conectado a Lovable y preferí recuperar esa historia. El nombre previsto del repositorio privado es `AgroLocal`. Los pasos manuales de revisión están en la auditoría.
+
+## Cantidades — 0011 preparada localmente
+
+La migración 0011_quantity_consistency está preparada y no se aplicó remotamente. El diagnóstico SQL, reglas de envases, pruebas y condiciones de despliegue están en [Consistencia de cantidades](docs/QUANTITY_CONSISTENCY.md). Para la demo del 3 de noviembre se conserva el backend actual; aplicar la migración requiere autorización independiente.
+
+## Traspaso de Supabase de pruebas — configuración pospuesta
+
+La conexión actual con Lovable se conserva para la presentación del 3 de noviembre. El compañero responsable preparará el nuevo entorno por separado siguiendo [SUPABASE_TRASPASO_2026-11-03.md](docs/SUPABASE_TRASPASO_2026-11-03.md): identidad del proyecto, Auth, Storage, migraciones 0000–0010 y cuentas de ensayo. No aplicar 0011 ni reemplazar las variables de la presentación durante esa preparación.

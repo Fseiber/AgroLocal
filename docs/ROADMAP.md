@@ -53,3 +53,7 @@ Cada propuesta identifica archivos, comportamiento y pruebas en `PHASE2_PROPOSAL
 ## Fuera de autorización
 
 No hay autorización para E2E remoto, migraciones remotas, commits, publicación, configuración remota de Lovable, reescritura, cambios de landing, blockchain ni comercio exterior.
+
+## Actualización del 2 de noviembre de 2026
+
+Consistencia de cantidades: implementación local 0011 preparada, unitarias/TypeScript/build aprobados. Pendientes: diagnóstico de datos reales, comparación PostgreSQL y pruebas de migración sobre una base aislada confirmada. No aplicada en producción ni autorizada para despliegue. Ver QUANTITY_CONSISTENCY.md. Las propuestas que numeraban cantidades como 0010 eran orientativas: 0010 ya corresponde a invitaciones; cantidades utiliza 0011.
